@@ -1,19 +1,14 @@
 #include <stdio.h>
-
-int checkArrDoiXung(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-
-        if (arr[i] != arr[n - i - 1])
-            return 0;
-    }
-
-    return 1;
-}
+#include <math.h>
 
 int main() {
-    int arr[4] = {1, 2, 2, 2};
-    int n = 4;
+    int n = 3;
+    int arr[n][n] = {
+        { 1, 2, 3},
+        { 4, 5, 6},
+        { 7, 8, 9},
+    };
 
-    printf("Ket qua: %d", checkArrDoiXung(arr, n));
+    printf("%d", arr[1][0]);
     return 1;
 }
