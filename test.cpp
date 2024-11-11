@@ -1,28 +1,19 @@
 #include <stdio.h>
-#include <math.h>
 
-int checkOdd(int n) {
+int checkArrDoiXung(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
 
-
-    while (n != 0) {
-        int b = n % 10;
-        if (b % 2 == 0) return 0;
-        
-        n /= 10;
+        if (arr[i] != arr[n - i - 1])
+            return 0;
     }
 
     return 1;
 }
 
-void xuatPhanTu(int a[], int n) {
-    for (int i = 0; i < n; i++)
-        if (checkOdd(a[i]))
-            printf("%d ", a[i]);
-                                                                                                                                                                                                                                                                   
-}
+int main() {
+    int arr[4] = {1, 2, 2, 2};
+    int n = 4;
 
-int main() {    
-    int a[6] = {1242, 24, 324, 157, 935, -135};
-    xuatPhanTu(a, 6);
-    return 0;
+    printf("Ket qua: %d", checkArrDoiXung(arr, n));
+    return 1;
 }
